@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bubble Report</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <div id="outerContainer">
+  <div id="summaryContainer">This is for the summary</div>
   <div id="scoresContainer"></div>
-
+  
+</div>
   <script>
     
     const scores = [
@@ -28,6 +32,8 @@
       scoreElement.textContent = output;
       scoresContainer.appendChild(scoreElement);
     }
+
+    
     
   </script>
 </body>

@@ -1,0 +1,17 @@
+#scoresContainer,
+#summaryContainer {
+  width: 300px;
+  /* Set the width of the container */
+  background-color: #f0f0f0;
+  /* Set a background color */
+  padding: 20px;
+  /* Add padding around the content */
+  margin: 0 auto;
+  /* Center the container horizontally */
+  font-family: Arial, sans-serif;
+  /* Set font family */
+  border-radius: 10px;
+  /* Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Add a subtle shadow */
+}
