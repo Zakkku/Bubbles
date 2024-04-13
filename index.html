@@ -9,8 +9,12 @@
 <body>
 
   <div id="outerContainer">
-  <div id="summaryContainer">This is for the summary</div>
-  <div id="scoresContainer"></div>
+  <div id="summaryContainer">
+    <h1>Summary</h1>
+  </div>
+  <div id="scoresContainer">
+    <h2>Bubble Tests</h2>
+  </div>
   
 </div>
   <script>
@@ -25,15 +29,41 @@
     ];
 
     const scoresContainer = document.getElementById('scoresContainer');
+    const summaryContainer = document.getElementById('summaryContainer');
+    let highestScore = 0;
+    let highScoresArray = [];
 
     for (let i = 0; i < scores.length; i++) {
+      if (scores[i] > highestScore) {
+        highestScore = scores[i];
+      }
       let output = "Bubble solution #" + i + " score: " + scores[i];
       let scoreElement = document.createElement('p');
       scoreElement.textContent = output;
       scoresContainer.appendChild(scoreElement);
     }
 
-    
+    let totalTests = scores.length;
+    let totalElement = document.createElement('p');
+    totalElement.textContent = "Bubble tests: " + totalTests;
+    summaryContainer.appendChild(totalElement);
+
+    let finalHighestScore = highestScore;
+    let highestScoreElement = document.createElement('p');
+    highestScoreElement.textContent = "Highest Bubble Score: " + finalHighestScore;
+    summaryContainer.appendChild(highestScoreElement);
+
+    for (let i = 0; i < scores.length; i++) {
+      if (scores[i] === finalHighestScore && highScoresArray.length === 0) {
+        highScoresArray.push("#" + i);
+      } else if (scores[i] === finalHighestScore) {
+        highScoresArray.push(" #" + i);
+      }
+    }
+
+  let highestScoreListElement = document.createElement('p');
+  highestScoreListElement.textContent = "Solutions with highgest score: " + highScoresArray;
+  summaryContainer.appendChild(highestScoreListElement);
     
   </script>
 </body>
